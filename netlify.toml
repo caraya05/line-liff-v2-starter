@@ -1,6 +1,9 @@
 [build]
-  command = "cd src/vanilla && yarn install && yarn build"
-  publish = "src/vanilla/dist"
+  base = "src/nextjs"
+  command = "npm run build"
+  publish = ".next"
 
-[template.environment]
-  LIFF_ID = "Your LIFF ID which is aquired from LINE Dev Center"
+[build.environment]
+  NETLIFY_USE_YARN = "false"
+  NODE_VERSION = "20"
+
